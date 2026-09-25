@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base target="_top">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- Makes "Add to Home Screen" launch full-screen, app-style, with no Safari address bar -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Expenses">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAJqklEQVR4nO3dW2wU1x3H8TO7O7uzN9trm4QYAzZpudg4mEshqE7AmCgpVSiUklAiqlYNaR+qRpVatVSVUkRaVa2qXlTxkCa0qdoQJZCGpiBRCnEoiIsLotxMTJ3EF4yJsb14b7Mzszt9oEIt8HecndndOWd/n0eEd2atr8/unDkzI6368SADuBtXsXcAnAtxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAAlxAMlT7B1wFtktTZvkqb/HM73aU13mqgq5KkNuv0/yeSTZI7kkphmmbpgx1RyNZ0bi2YHRTO91o2fI6Bkysmax995uiINJjM2plefX++bVeWfVyJ5xB1NFlhRZCvtZTcT9v/+e0szOK/r5Xu345XTPkJHfPS4UqZSf1DSt2tPWpCxrUCaVuT/6f0/YtWjmH5fUv/0rdWUkY+PLFl6JxtFc5/38kuDCGd68buViv76nI3n0XdXk8xOn5D5WZt4nb14ZbqiVC7Cthlq5obb86mho1/HEgbOpTLYA27RTCY0cYb9rc1toRZNfKsbW+4eN37fHj3Wli7HxHJXKoeyCeu/2p6vailQGY6y2yvPsqrIibTxH4n+sSIx9aXlo/dJgsbLgl+BxKLL07dXlS2f6ir0jXBI5jqBP2rYhMqumEN89hSRsHEGf9PyGyEyUYYGYX0hlt/TDJ1CGVWLG8eyqssLMZIhNwDi+8GCwda5S7L0QgWjfOT4xWd60LGTjC0aT2Yt9eucV7fJVI5rIxtRsPJV1uyW/VworrppK95RK96wauWmatzwg2l+aUHH4ZOk7q8vGP606QSZjZ97X9p5OnricvvNcvJE107oZTWT7hv97AlZibMZkubVRWdagVIYEqUSoODa2BGurbHhH739o/HrfWNdVfeI/YjLWPah3D+o7DsUemqOsXxqsv4f73y33b+CWKZXuNZ8KWHwR02R/eCe++0Qi55NkWZO9c1E9fFH99Gzl6baQvYsBCkycOJ5ZGfa4LU2Ra4b50z03bDk3ZjJ25JLa0Z3e2BJctyQo8Tl1L8in4+wp8qL7Lc2Ra4b5g1ej9p41Tevm796Ob3ll9HqMy1U/gsTxVIvVI5Rf7Ru70KfZsjO3OderfeOlkTy9eF6JEMcn75MXWFvT9caJZPsF1a79uVMslf3+zujBc3ncRD6IEMfjC/1Wfrx/2Hi5PWbXzlCMjPnbg3nfir24jyOkuB6aY2k+9MWDcYO3BXyFwX0cK+YqXk/uBwOn3tM6unlauldI3MexvNHSsPH6sYRdeyIevuOYVOa2cl6+97pxrpe/g4iC4TuOltk+K9NL+06nbNsVEXFzacJ315Q/bO2LZ2Fs3z+2V5Tm+Bg57q1wt8zmoIyxVPbAWc4mM8bBRxzrlgRcPJye2HsqpRl8Xvp4NxzEUR5wPfKApWmuwtAM86+nksXeCztxEMfqRQErMxkFc+i8Gk0KNZvm9DgUWfrsAg6GDZOxP58Uathgzo/j0WZ/2O/0nWSMnbyc7h8W5J4ttzj69+5xsbWLrS7uKozdJ0QbNpjD41jWaPM9d/Kka0DncbnGR3JuHBJj65YEi70XEyLksME4miG9zYJ677YNkZx//MlfDMVVoY4s8sG5I8f4fHLuB7dZkyVQxgTwGodsYebDyHB6A7dC4zUOKxchiHc32TzhNQ4oAF7jsPLXz8U5PCfgNQ49k3sdsrUL40oHr3GoWu5xSJKlg53Swc08h9NWgr3w99ieDjHnvm7hY+Rw2kqwWCq7/4wgawHHwUccTlsJ9pd/JlVd/ANiDuJw2kowVTffOiX+sMG4iMNpK8H2n0nFUiUx++70OJy2EszICrjii+L0OJy2Eqz9fGpojMs7seTAQb/3OzltJZjJ2K7jpTJsMIfH4bSVYMe70n3CLRQdh3PjcOBKsFK7JJ+bGdK7WrM4sLktnPOPv3Qo9oagK/xs4dyRYyKOdKatTEWtXRzESbhx8B3H9Vims/9j3Gf4NpUhV1uTg2blnYbvOBhjB89Zmqzc2BIKWLrHh8i4j6P9gpqw8NlSFXZ9pTX3by1i4z4OVTctDh6fme9vmpbfR1MzxmS39MxKzirkPg7G2J6OpJWHPUuMbVlbPrkijxMqFUHXT56KrODtEUEixDEYzVgcPMoDrq1PVORpnn7hDO9vvlo1ewp/jxUTIQ7G2M6jCYs3mq2t8vxsU8Te8SPgk77+SHjrk5FIkMvfM5c7facPb2TePGl1+nJqleeXX65srrPh+4fEWFuT8sLXqh9fFOD3WEic563sPJJY1mD1XEzY7/rRFyPtF9Qdb8eGY7mMRW4XW96orF8anGrHM6OKi/s3cIuqm9v3x55bX2H9pZY3Kg/O9LVfUA+cTV26MqFJNomx+yfLrY3K8kalgs8PkTuJEwdj7OS/03tPp2xZHKTI0mPN/sea/QOjmYt9WtdVo/uaPpbMxlQzmc66XZLfK4X9ril4OiRHXjwYa5wq102y7X3VRNw1Ef/KB+x6PZ6IFrtmmNt2RW+IdVe/YhEtDsbYYDSz9fWoSDeLLRYB42CMvTugP78bfVglZhyMsVPvac+9Fi2FS4/yR9g4GGNne7Qtr4yOxPH9I0cix8EY6xrQv7lj2MqCoFImeByMsdFE9nt/Gtl5NPcnkJcs8eNgjBlZ9sfD8W+9PNJ9rWgXFvQMGT9/a6xYW88N36vPPy5JYivmKpseDhXycpj+YeO1Y8lD51Pc3cOwtOK4yeuRWhuVzy0OTK/O7wTx+T7tzZPJ412WlsgXUSnGcUtznbe1UVk6SwnausZ4MJo53KkeOJsaGOH7qtqSjuMmj1uaX+edV+edN91bf2+ON3tIaealK/q5Xu3E5fQHQ4JcMinaibccGBmzozt987nUAZ80fZJnerVnWrWnusxdFXJFQq6AV5I90s17hOiGqRlmXDVHEtmRWOZqNNM7ZHwwZPQMGeLd+xZx/J9k2uzs1zEvclNJHMpCbhAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkBAHkP4D9azMEOT+hwQAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<style>
+  :root{
+    --blue:#4A86E8; --blue-light:#EAF1FD; --text:#1A1A1A; --muted:#6B7280;
+    --border:#E5E7EB; --card-bg:#FFFFFF; --bg:#F7F8FA; --good:#34A853;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);margin:0;padding:16px;}
+  h1{font-size:18px;margin:0 0 2px 0;}
+  .badge{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:11px;
+         padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle;}
+  .subtitle{color:var(--muted);font-size:12px;margin:0 0 16px 0;}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--card-bg);
+           border:1px solid var(--border);border-radius:10px;padding:10px;margin-bottom:16px;}
+  .toolbar label{font-size:11px;color:var(--muted);display:block;margin-bottom:2px;}
+  .toolbar input, .toolbar select{padding:6px 8px;border:1px solid var(--border);border-radius:6px;font-size:12px;}
+  .btn{background:var(--blue);color:#fff;border:none;border-radius:6px;padding:8px 14px;
+       font-size:12px;font-weight:bold;cursor:pointer;}
+  .btn:hover{opacity:.9;}
+  .btn.secondary{background:#fff;color:var(--text);border:1px solid var(--border);}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:16px;}
+  .card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:14px;}
+  .card .label{font-size:10px;color:var(--muted);font-weight:bold;letter-spacing:.03em;}
+  .card .value{font-size:22px;font-weight:bold;margin:4px 0 2px 0;}
+  .card .sub{font-size:11px;color:var(--muted);}
+  .grid2{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-bottom:16px;}
+  @media(max-width:800px){.grid2{grid-template-columns:1fr;}}
+  .section{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:14px;}
+  .section h2{font-size:13px;margin:0 0 2px 0;}
+  .section .desc{font-size:11px;color:var(--muted);margin:0 0 10px 0;}
+  .legend-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;
+              border-bottom:1px solid var(--border);font-size:12px;}
+  .legend-row:last-child{border-bottom:none;}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;}
+  .bar-row{margin-bottom:10px;font-size:12px;}
+  .bar-row .top{display:flex;justify-content:space-between;margin-bottom:3px;}
+  .bar-track{background:#EEF1F5;border-radius:4px;height:6px;overflow:hidden;}
+  .bar-fill{background:var(--blue);height:100%;}
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;
+     border-bottom:1px solid var(--border);padding:6px 4px;}
+  td{padding:7px 4px;border-bottom:1px solid var(--border);}
+  .actions button{border:none;background:none;cursor:pointer;font-size:13px;margin-right:6px;}
+  .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);
+            align-items:center;justify-content:center;z-index:50;}
+  .modal{background:#fff;border-radius:10px;padding:20px;width:340px;max-width:90vw;}
+  .modal h3{margin-top:0;font-size:15px;}
+  .field{margin-bottom:10px;}
+  .field label{display:block;font-size:11px;color:var(--muted);margin-bottom:3px;}
+  .field input, .field select{width:100%;padding:7px 8px;border:1px solid var(--border);
+                               border-radius:6px;font-size:12px;}
+  .modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:14px;}
+  .empty{color:var(--muted);font-size:12px;padding:12px 0;text-align:center;}
+  .error-banner{display:none;background:#FDECEA;border:1px solid #F5C2C0;color:#8B1E1E;
+                font-size:12px;border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+  .error-banner button{float:right;border:none;background:none;color:#8B1E1E;font-weight:bold;cursor:pointer;}
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .table-scroll table{min-width:560px;}
+
+  /* --- iPhone / narrow-screen tweaks --- */
+  @media (max-width:480px){
+    body{padding:12px;}
+    h1{font-size:20px;}
+    .toolbar{flex-direction:column;align-items:stretch;}
+    .toolbar > div{width:100%;}
+    .toolbar input, .toolbar select{width:100%;padding:10px;font-size:14px;}
+    .toolbar > div[style*="flex:1"]{min-width:0;}
+    .toolbar > div[style*="align-self:flex-end"]{align-self:stretch;flex-direction:row;}
+    .btn{padding:12px 16px;font-size:14px;flex:1;}
+    .cards{grid-template-columns:1fr 1fr;}
+    .card .value{font-size:18px;}
+    table{font-size:12px;}
+    .actions button{font-size:18px;padding:4px 6px;}  /* bigger tap target for edit/delete */
+    .modal{width:92vw;}
+  }
+</style>
+</head>
+<body>
+
+  <h1>Expense Analytics & Slicer <span class="badge">Interactive</span></h1>
+  <p class="subtitle">Live spreadsheet sync &middot; Multi-dimensional breakdown</p>
+  <div class="error-banner" id="errorBanner">
+    <button onclick="document.getElementById('errorBanner').style.display='none'">&times;</button>
+    <span id="errorText"></span>
+  </div>
+
+  <div class="toolbar">
+    <div>
+      <label>From</label>
+      <input type="date" id="fromDate">
+    </div>
+    <div>
+      <label>To</label>
+      <input type="date" id="toDate">
+    </div>
+    <div>
+      <label>Category</label>
+      <select id="catFilter"><option value="">All Categories</option></select>
+    </div>
+    <div>
+      <label>Payment Mode</label>
+      <select id="pmFilter"><option value="">All Payment Modes</option></select>
+    </div>
+    <div>
+      <label>Bank / Card</label>
+      <select id="bankFilter"><option value="">All Banks/Cards</option></select>
+    </div>
+    <div style="flex:1;min-width:140px;">
+      <label>Search</label>
+      <input type="text" id="searchBox" placeholder="Search remarks, category, bank/card...">
+    </div>
+    <div style="align-self:flex-end;display:flex;gap:8px;">
+      <button class="btn secondary" id="clearBtn">Clear</button>
+      <button class="btn" id="addBtn">+ Add Expense</button>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="label">TOTAL EXPENSES</div>
+      <div class="value" id="cardTotal">&#8364;0</div>
+      <div class="sub" id="cardTotalSub">0 transactions</div>
+    </div>
+    <div class="card">
+      <div class="label">AVG. PER EXPENSE</div>
+      <div class="value" id="cardAvg">&#8364;0</div>
+      <div class="sub" id="cardAvgSub">&nbsp;</div>
+    </div>
+    <div class="card">
+      <div class="label">TOP SPENDING CATEGORY</div>
+      <div class="value" id="cardTop" style="font-size:15px;">&mdash;</div>
+      <div class="sub" id="cardTopSub">&nbsp;</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="section">
+      <h2>Category Breakdown</h2>
+      <p class="desc">Spending share by expense type across selected dates</p>
+      <div id="donutChart" style="width:100%;height:220px;"></div>
+      <div id="catLegend"></div>
+    </div>
+    <div class="section">
+      <h2>Monthly Spending Timeline</h2>
+      <p class="desc">Chronological expenditure overview</p>
+      <div id="monthChart" style="width:100%;height:220px;"></div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="section">
+      <h2>Payment Methods</h2>
+      <p class="desc">Breakdown by payment channel</p>
+      <div id="pmBars"></div>
+    </div>
+    <div class="section">
+      <h2>Device Distribution</h2>
+      <p class="desc">Logged devices</p>
+      <div id="devBars"></div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-bottom:16px;">
+    <h2>Bank / Card Breakdown</h2>
+    <p class="desc">Where the money actually left from &mdash; use this to spot which account/card you rely on most</p>
+    <div id="bankBars"></div>
+  </div>
+
+  <div class="section" style="margin-bottom:16px;">
+    <h2>Transactions Ledger</h2>
+    <p class="desc" id="ledgerCount">Showing 0 of 0 entries</p>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Date</th><th>Category</th><th>Remarks</th><th>Payment</th><th>Bank/Card</th><th>Device</th><th>Amount</th><th>Actions</th></tr>
+      </thead>
+      <tbody id="ledgerBody"></tbody>
+    </table>
+    </div>
+    <div class="empty" id="ledgerEmpty" style="display:none;">No matching transactions</div>
+  </div>
+
+  <div class="modal-bg" id="modalBg">
+    <div class="modal">
+      <h3 id="modalTitle">Add New Expense</h3>
+      <input type="hidden" id="editRow">
+      <div class="field"><label>Amount (&#8364;)</label><input type="number" id="fAmount"></div>
+      <div class="field"><label>Category</label><select id="fCategory"></select></div>
+      <div class="field"><label>Date</label><input type="date" id="fDate"></div>
+      <div class="field"><label>Time</label><input type="time" id="fTime"></div>
+      <div class="field"><label>Payment Mode</label><select id="fPayment"></select></div>
+      <div class="field"><label>Bank / Card (optional)</label>
+        <input type="text" id="fBankCard" list="bankCardOptions" placeholder="e.g. HDFC Debit, Chase Sapphire">
+        <datalist id="bankCardOptions"></datalist>
+      </div>
+      <div class="field"><label>Device Logged</label><select id="fDevice"></select></div>
+      <div class="field"><label>Remarks / Purpose</label><input type="text" id="fRemarks" placeholder="e.g. Monthly groceries, OTT subscription"></div>
+      <div class="modal-actions">
+        <button class="btn secondary" id="cancelBtn">Cancel</button>
+        <button class="btn" id="saveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+/**
+ * ============================================================================
+ * STANDALONE MODE (GitHub Pages / any static host) — API shim
+ * ============================================================================
+ * Inside Google Sheets, google.script.run talks directly to Code.gs. Hosted anywhere
+ * else, that object doesn't exist, so this defines a drop-in replacement with the exact
+ * same withSuccessHandler/withFailureHandler/.getX() call shape, backed by fetch() calls
+ * to your deployed Apps Script Web App URL instead. Every other line of this dashboard's
+ * code is unchanged and unaware of which mode it's running in.
+ *
+ * TO USE THIS FILE OUTSIDE GOOGLE SHEETS (e.g. on GitHub Pages):
+ * Paste your Web App URL (Apps Script > Deploy > Manage deployments — ends in /exec)
+ * between the quotes below. Leave it untouched if you're only ever opening this file
+ * from inside Google Sheets itself — the shim stays inactive there either way.
+ */
+const API_BASE_URL = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+if (typeof google === 'undefined' || !google.script || !google.script.run) {
+  window.google = window.google || {};
+  google.script = google.script || {};
+
+  if (!API_BASE_URL || API_BASE_URL.indexOf('PASTE_YOUR') === 0) {
+    document.addEventListener('DOMContentLoaded', () => {
+      const el = document.getElementById('errorBanner');
+      const txt = document.getElementById('errorText');
+      if (el && txt) {
+        txt.textContent = 'API_BASE_URL is not set yet — open this file, find the line near the ' +
+          'top of the <script> tag that says API_BASE_URL, and paste your Apps Script Web App URL in there.';
+        el.style.display = 'block';
+      }
+    });
+  }
+
+  const API_ACTIONS = ['getConfig', 'getTransactions', 'addExpense', 'updateExpense', 'deleteExpense'];
+
+  async function callApi_(action, args) {
+    const isRead = (action === 'getConfig' || action === 'getTransactions');
+    let res;
+    if (isRead) {
+      res = await fetch(API_BASE_URL + '?action=' + action);
+    } else {
+      const payload = { action: action };
+      if (action === 'addExpense') payload.data = args[0];
+      else if (action === 'updateExpense') { payload.row = args[0]; payload.data = args[1]; }
+      else if (action === 'deleteExpense') { payload.row = args[0]; }
+      res = await fetch(API_BASE_URL, {
+        method: 'POST',
+        // text/plain avoids a CORS preflight request, which Apps Script Web Apps can't
+        // answer — the server still parses the body as JSON regardless of this header.
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+    }
+    if (!res.ok) throw new Error('Network error (HTTP ' + res.status + ') talking to the Web App.');
+    const json = await res.json();
+    if (json.status === 'error') throw new Error(json.message || 'Unknown server error.');
+    return json.data;
+  }
+
+  function makeRunner_(successCb, failureCb) {
+    const runner = {};
+    API_ACTIONS.forEach(action => {
+      runner[action] = function () {
+        const args = Array.prototype.slice.call(arguments);
+        callApi_(action, args).then(successCb).catch(err => { if (failureCb) failureCb(err); });
+      };
+    });
+    return runner;
+  }
+
+  google.script.run = {
+    withSuccessHandler(cb) { return { withFailureHandler: fcb => makeRunner_(cb, fcb) }; },
+    withFailureHandler(fcb) { return { withSuccessHandler: cb => makeRunner_(cb, fcb) }; }
+  };
+}
+/** ======================= end standalone-mode shim ======================= */
+
+google.charts.load('current', {packages:['corechart']});
+
+let ALL_TX = [];
+let CONFIG = {categories:[], paymentModes:[], devices:[]};
+const CAT_COLORS = ['#4A86E8','#E06666','#34A853','#F4B400','#8E63CE','#3ABAB4','#E67C73','#795548','#607D8B','#C2185B','#00897B','#9E9D24'];
+
+function fmtRupee(n){
+  return '\u20AC' + n.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+
+/**
+ * Every server call funnels its failures through here instead of failing silently.
+ * That silent-failure is exactly what made the dashboard look "stuck at zero and not
+ * refreshing" last time: one bad row made getTransactions() throw server-side, and
+ * with no failure handler the client just never heard back.
+ */
+function showError(err){
+  const msg = (err && err.message) ? err.message : String(err);
+  document.getElementById('errorText').textContent = 'Something went wrong: ' + msg;
+  document.getElementById('errorBanner').style.display = 'block';
+  console.error(err);
+}
+
+function init(){
+  google.script.run
+    .withFailureHandler(showError)
+    .withSuccessHandler(cfg=>{
+      CONFIG = cfg;
+      fillSelect('catFilter', cfg.categories, true);
+      fillSelect('pmFilter', cfg.paymentModes, true);
+      fillSelect('fCategory', cfg.categories, false);
+      fillSelect('fPayment', cfg.paymentModes, false);
+      fillSelect('fDevice', cfg.devices, false);
+    }).getConfig();
+
+  google.script.run
+    .withFailureHandler(showError)
+    .withSuccessHandler(rows=>{
+      ALL_TX = rows;
+      refreshBankLists(ALL_TX);
+      render();
+    }).getTransactions();
+
+  document.getElementById('fromDate').addEventListener('change', render);
+  document.getElementById('toDate').addEventListener('change', render);
+  document.getElementById('catFilter').addEventListener('change', render);
+  document.getElementById('pmFilter').addEventListener('change', render);
+  document.getElementById('bankFilter').addEventListener('change', render);
+  document.getElementById('searchBox').addEventListener('input', render);
+  document.getElementById('clearBtn').addEventListener('click', ()=>{
+    document.getElementById('fromDate').value='';
+    document.getElementById('toDate').value='';
+    document.getElementById('catFilter').value='';
+    document.getElementById('pmFilter').value='';
+    document.getElementById('bankFilter').value='';
+    document.getElementById('searchBox').value='';
+    render();
+  });
+  document.getElementById('addBtn').addEventListener('click', ()=>openModal(null));
+  document.getElementById('cancelBtn').addEventListener('click', closeModal);
+  document.getElementById('saveBtn').addEventListener('click', saveExpense);
+}
+
+function fillSelect(id, options, withAll){
+  const sel = document.getElementById(id);
+  const keepFirst = withAll ? 1 : 0;
+  sel.innerHTML = '';
+  if(withAll){
+    const o = document.createElement('option'); o.value=''; o.textContent = id==='catFilter' ? 'All Categories':'All Payment Modes';
+    sel.appendChild(o);
+  }
+  options.forEach(o=>{
+    const opt = document.createElement('option');
+    opt.value = o; opt.textContent = o;
+    sel.appendChild(opt);
+  });
+}
+
+function getFiltered(){
+  const from = document.getElementById('fromDate').value;
+  const to = document.getElementById('toDate').value;
+  const cat = document.getElementById('catFilter').value;
+  const pm = document.getElementById('pmFilter').value;
+  const bank = document.getElementById('bankFilter').value;
+  const q = document.getElementById('searchBox').value.trim().toLowerCase();
+
+  return ALL_TX.filter(t=>{
+    if(from && t.isoDate < from) return false;
+    if(to && t.isoDate > to) return false;
+    if(cat && t.category !== cat) return false;
+    if(pm && t.paymentMode !== pm) return false;
+    if(bank && (t.bankCard || '') !== bank) return false;
+    if(q && !(
+      t.remarks.toLowerCase().includes(q) ||
+      t.category.toLowerCase().includes(q) ||
+      (t.bankCard || '').toLowerCase().includes(q)
+    )) return false;
+    return true;
+  });
+}
+
+/**
+ * Bank/Card is free text (yours, not a fixed list), so its options can't come from
+ * getConfig() like Category/Payment Mode do. Instead this derives the unique values
+ * actually present in your data and uses them for both the filter dropdown and the
+ * Add/Edit form's autocomplete suggestions. Called on load and after every add/edit/delete.
+ */
+function refreshBankLists(rows){
+  const unique = [...new Set(rows.map(r => (r.bankCard || '').trim()).filter(Boolean))].sort();
+
+  const filterSel = document.getElementById('bankFilter');
+  const keepValue = filterSel.value;
+  filterSel.innerHTML = '<option value="">All Banks/Cards</option>';
+  unique.forEach(v=>{
+    const opt = document.createElement('option');
+    opt.value = v; opt.textContent = v;
+    filterSel.appendChild(opt);
+  });
+  if(unique.includes(keepValue)) filterSel.value = keepValue;
+
+  const datalist = document.getElementById('bankCardOptions');
+  datalist.innerHTML = '';
+  unique.forEach(v=>{
+    const opt = document.createElement('option');
+    opt.value = v;
+    datalist.appendChild(opt);
+  });
+}
+
+function render(){
+  const rows = getFiltered();
+  renderCards(rows);
+  renderCategoryBreakdown(rows);
+  renderMonthlyChart(rows);
+  renderPaymentMethods(rows);
+  renderDevices(rows);
+  renderBankBreakdown(rows);
+  renderLedger(rows);
+}
+
+function renderCards(rows){
+  const total = rows.reduce((s,r)=>s+r.amount,0);
+  document.getElementById('cardTotal').textContent = fmtRupee(total);
+  document.getElementById('cardTotalSub').textContent = rows.length + ' transactions';
+
+  const avg = rows.length ? total/rows.length : 0;
+  document.getElementById('cardAvg').textContent = fmtRupee(avg);
+  document.getElementById('cardAvgSub').textContent = 'Calculated across ' + rows.length + ' items';
+
+  const byCat = groupSum(rows, r=>r.category);
+  const top = Object.entries(byCat).sort((a,b)=>b[1]-a[1])[0];
+  document.getElementById('cardTop').textContent = top ? top[0] : '\u2014';
+  document.getElementById('cardTopSub').textContent = top ? fmtRupee(top[1]) : '';
+}
+
+function groupSum(rows, keyFn){
+  const out = {};
+  rows.forEach(r=>{ const k = keyFn(r); out[k] = (out[k]||0) + r.amount; });
+  return out;
+}
+
+function renderCategoryBreakdown(rows){
+  const byCat = groupSum(rows, r=>r.category);
+  const total = rows.reduce((s,r)=>s+r.amount,0);
+  const entries = Object.entries(byCat).sort((a,b)=>b[1]-a[1]);
+
+  const legend = document.getElementById('catLegend');
+  legend.innerHTML = '';
+  entries.forEach(([cat,amt],i)=>{
+    const pct = total ? (amt/total*100).toFixed(1) : '0.0';
+    const row = document.createElement('div');
+    row.className = 'legend-row';
+    row.innerHTML = '<span><span class="dot" style="background:'+CAT_COLORS[i%CAT_COLORS.length]+'"></span>'+cat+'</span>'+
+                     '<span>'+fmtRupee(amt)+' <span style="color:var(--muted)">('+pct+'%)</span></span>';
+    legend.appendChild(row);
+  });
+
+  if(!entries.length){
+    document.getElementById('donutChart').innerHTML = '<div class="empty">No data for this filter</div>';
+    return;
+  }
+
+  const dataTable = new google.visualization.DataTable();
+  dataTable.addColumn('string','Category');
+  dataTable.addColumn('number','Amount');
+  dataTable.addRows(entries);
+  const chart = new google.visualization.PieChart(document.getElementById('donutChart'));
+  chart.draw(dataTable, {
+    pieHole:0.6, legend:'none', chartArea:{width:'90%',height:'90%'},
+    colors: CAT_COLORS, tooltip:{text:'value'}
+  });
+}
+
+function renderMonthlyChart(rows){
+  const byMonth = groupSum(rows, r=>r.month);
+  const order = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const entries = Object.entries(byMonth).sort((a,b)=>order.indexOf(a[0])-order.indexOf(b[0]));
+  if(!entries.length){
+    document.getElementById('monthChart').innerHTML = '<div class="empty">No data for this filter</div>';
+    return;
+  }
+  const dataTable = new google.visualization.DataTable();
+  dataTable.addColumn('string','Month');
+  dataTable.addColumn('number','Amount');
+  dataTable.addRows(entries);
+  const chart = new google.visualization.ColumnChart(document.getElementById('monthChart'));
+  chart.draw(dataTable, {legend:'none', colors:['#4A86E8'], chartArea:{width:'85%',height:'75%'}});
+}
+
+function renderBarSection(containerId, rows, keyFn){
+  const grouped = groupSum(rows, keyFn);
+  const counts = {};
+  rows.forEach(r=>{ const k=keyFn(r); counts[k]=(counts[k]||0)+1; });
+  const total = rows.reduce((s,r)=>s+r.amount,0);
+  const entries = Object.entries(grouped).sort((a,b)=>b[1]-a[1]);
+  const el = document.getElementById(containerId);
+  el.innerHTML = '';
+  if(!entries.length){ el.innerHTML = '<div class="empty">No data</div>'; return; }
+  entries.forEach(([k,amt])=>{
+    const pct = total ? (amt/total*100).toFixed(1) : '0.0';
+    const div = document.createElement('div');
+    div.className = 'bar-row';
+    div.innerHTML = '<div class="top"><span>'+k+' <span style="color:var(--muted)">('+counts[k]+')</span></span>'+
+                     '<span>'+fmtRupee(amt)+' ('+pct+'%)</span></div>'+
+                     '<div class="bar-track"><div class="bar-fill" style="width:'+pct+'%"></div></div>';
+    el.appendChild(div);
+  });
+}
+
+function renderPaymentMethods(rows){ renderBarSection('pmBars', rows, r=>r.paymentMode); }
+function renderDevices(rows){ renderBarSection('devBars', rows, r=>r.device); }
+function renderBankBreakdown(rows){ renderBarSection('bankBars', rows, r=>(r.bankCard && r.bankCard.trim()) || 'Not specified'); }
+
+function renderLedger(rows){
+  const body = document.getElementById('ledgerBody');
+  body.innerHTML = '';
+  document.getElementById('ledgerCount').textContent = 'Showing ' + rows.length + ' of ' + ALL_TX.length + ' entries';
+  document.getElementById('ledgerEmpty').style.display = rows.length ? 'none' : 'block';
+
+  const sorted = rows.slice().sort((a,b)=> b.isoDate.localeCompare(a.isoDate));
+  sorted.forEach(r=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      '<td>'+r.date+' <span style="color:var(--muted)">'+r.time+'</span></td>'+
+      '<td>'+r.category+'</td>'+
+      '<td>'+r.remarks+'</td>'+
+      '<td>'+r.paymentMode+'</td>'+
+      '<td>'+(r.bankCard || '<span style="color:var(--muted)">&mdash;</span>')+'</td>'+
+      '<td>'+r.device+'</td>'+
+      '<td>'+fmtRupee(r.amount)+'</td>'+
+      '<td class="actions">'+
+        '<button title="Edit" data-row="'+r.row+'" class="editBtn">\u270F\uFE0F</button>'+
+        '<button title="Delete" data-row="'+r.row+'" class="delBtn">\u{1F5D1}\uFE0F</button>'+
+      '</td>';
+    body.appendChild(tr);
+  });
+
+  body.querySelectorAll('.editBtn').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      const row = Number(b.dataset.row);
+      const tx = ALL_TX.find(t=>t.row===row);
+      if(tx) openModal(tx);
+    });
+  });
+  body.querySelectorAll('.delBtn').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      const row = Number(b.dataset.row);
+      if(!confirm('Delete this expense?')) return;
+      google.script.run
+        .withFailureHandler(showError)
+        .withSuccessHandler(rows2=>{ ALL_TX = rows2; refreshBankLists(ALL_TX); render(); }).deleteExpense(row);
+    });
+  });
+}
+
+function openModal(tx){
+  document.getElementById('modalTitle').textContent = tx ? 'Edit Expense' : 'Add New Expense';
+  document.getElementById('editRow').value = tx ? tx.row : '';
+  document.getElementById('fAmount').value = tx ? tx.amount : '';
+  document.getElementById('fCategory').value = tx ? tx.category : CONFIG.categories[0];
+  document.getElementById('fDate').value = tx ? tx.isoDate : new Date().toISOString().slice(0,10);
+  document.getElementById('fTime').value = tx ? tx.time : '';
+  document.getElementById('fPayment').value = tx ? tx.paymentMode : CONFIG.paymentModes[0];
+  document.getElementById('fBankCard').value = tx ? (tx.bankCard || '') : '';
+  document.getElementById('fDevice').value = tx ? tx.device : CONFIG.devices[0];
+  document.getElementById('fRemarks').value = tx ? tx.remarks : '';
+  document.getElementById('modalBg').style.display = 'flex';
+}
+
+function closeModal(){ document.getElementById('modalBg').style.display = 'none'; }
+
+function saveExpense(){
+  const data = {
+    amount: document.getElementById('fAmount').value,
+    category: document.getElementById('fCategory').value,
+    date: document.getElementById('fDate').value,
+    time: document.getElementById('fTime').value,
+    paymentMode: document.getElementById('fPayment').value,
+    bankCard: document.getElementById('fBankCard').value,
+    device: document.getElementById('fDevice').value,
+    remarks: document.getElementById('fRemarks').value
+  };
+  if(!data.amount || !data.date){ alert('Amount and Date are required.'); return; }
+
+  const editRow = document.getElementById('editRow').value;
+  const handler = rows=>{ ALL_TX = rows; refreshBankLists(ALL_TX); closeModal(); render(); };
+  const saveBtn = document.getElementById('saveBtn');
+  saveBtn.disabled = true;
+  const reEnable = ()=>{ saveBtn.disabled = false; };
+
+  if(editRow){
+    google.script.run
+      .withFailureHandler(err=>{ showError(err); reEnable(); })
+      .withSuccessHandler(rows=>{ handler(rows); reEnable(); })
+      .updateExpense(Number(editRow), data);
+  } else {
+    google.script.run
+      .withFailureHandler(err=>{ showError(err); reEnable(); })
+      .withSuccessHandler(rows=>{ handler(rows); reEnable(); })
+      .addExpense(data);
+  }
+}
+
+google.charts.setOnLoadCallback(init);
+</script>
+</body>
+</html>
